@@ -5,37 +5,12 @@ case, they will be able to observe that they have ordered
 three vanilla, two coffee, and one strawberry froyo.
 
 
-let userInputString = prompt(
-    "Please enter a list of comma-separated froyo flavors.",
-    "vanilla,vanilla,coffee,strawberry"
-);
-
-let order = userInputString.split(",");
-
-let orderCount = {};
-
-for (let i = 0; i < order.length; i++){
-    let currentOrder = order[i];
-    if (orderCount[order]){
-        orderCount[order]++;
-    } else {
-        orderCount[order] = 1;
-    }
-}
-console.log(orderCount);
-
-let orderArray = [];
-for (let order in orderCount) {
-    orderArray.push({Flavor: order, Count: orderCount[order]});
-}
-
-console.table(orderArray);
 */
 
-// Prompt the user for froyo flavors
+// Prompt for froyo flavors
 let userInput = prompt("Please enter a list of comma-separated froyo flavors:");
 
-// Split the input into an array
+// Make The Array
 let flavors = userInput.split(',');
 
 // Count the occurrences of each flavor
@@ -55,5 +30,5 @@ for (let flavor in flavorCount) {
     flavorArray.push({Flavor: flavor, Count: flavorCount[flavor]});
 }
 
-// Display the results in the browser console
+// Display as a table
 console.table(flavorArray);
